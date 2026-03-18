@@ -1,0 +1,30 @@
+# -------------------------------------------------------------------
+# 🧠 1. birdnet-api (Python) 忽略规则
+# -------------------------------------------------------------------
+birdnet-api/__pycache__/
+birdnet-api/*.py[cod]
+birdnet-api/venv/
+birdnet-api/.env
+birdnet-api/test_audio.mp3
+birdnet-api/*.mp3
+birdnet-api/*.wav
+
+# -------------------------------------------------------------------
+# 🎨 2. birdnet-app (Node/React) 忽略规则
+# -------------------------------------------------------------------
+birdnet-app/node_modules/
+birdnet-app/dist/
+birdnet-app/.env.local
+birdnet-app/.env.*.local
+birdnet-app/.vscode/
+birdnet-app/.DS_Store
+
+# -------------------------------------------------------------------
+# 💻 3. 全局通用忽略规则 (OS & IDE)
+# -------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+.DS_Store?

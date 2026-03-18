@@ -1,0 +1,7 @@
+{
+  "name": "Hearing Birds - 倾听自然",
+  "description": "An AI-powered bird song identification application that helps users discover and learn about nature's voices through real-time audio analysis.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
