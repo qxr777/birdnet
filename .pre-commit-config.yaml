@@ -1,0 +1,33 @@
+# 🛡️ SDD 全栈自动化安全月盾 (Git Hooks)
+# 作用：在人类或 AI 试图 `git commit` 时，自动拦截硬编码机密、控制语法。
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-yaml               # 验证 YAML 文件格式
+      - id: end-of-file-fixer        # 确保文件以空行结尾
+      - id: trailing-whitespace     # 砍掉行尾空格
+      - id: check-added-large-files  # 拦截意外提交的大文件 (>500KB)
+        args: ['--maxkb=500']
+
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+      - id: detect-secrets           # 🚨 绝对核心：拦截任何硬编码的 API Key/密码
+        args: ['--baseline', '.secrets.baseline']
+        exclude: '.*test.*|.*_test.py$' # 排除测试 mock 数据
+
+  # 🐍 针对 Python 的极致性能 Linter
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.7
+    hooks:
+      - id: ruff                     # 自动修复 Python 语法错误、移除未使用的 import
+        args: [ --fix ]
+
+  # 🎨 针对前端 (React/TSX) 的美化与安全控制
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.1.0
+    hooks:
+      - id: prettier
+        types_or: [javascript, jsx, ts, tsx, css, html]
