@@ -18,6 +18,9 @@
 本项目是一个**前后端分离**的鸟类音频声音分析平台。
 用户可以通过极具现代感的网页端实时**录音**或**上传音频文件**，后端将调用基于 TensorFlow 的 `birdnet_analyzer` 模型，极速解算并返回音频中出现的鸟类物种、置信度以及具体出现的时间段。
 
+> 🧭 **Specs 全谱系规格书 (SDD 驱动)**
+> [功能规格 (spec.md)](./.system/spec.md) | [项目宪法 (constitution.md)](./.system/constitution.md) | [技术规划 (plan.md)](./.system/plan.md) | [微任务清单 (tasks.md)](./.system/tasks.md)
+
 - **`birdnet-api/`**：基于 FastAPI 的高性能异步计算后端 [Python]。
 - **`birdnet-app/`**：基于 React + Vite 的现代化视觉交互前端 [TypeScript]。
 
