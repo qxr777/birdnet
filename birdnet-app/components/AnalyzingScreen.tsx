@@ -56,12 +56,9 @@ const AnalyzingScreen: React.FC<AnalyzingScreenProps> = ({ onCancel, isRecording
         {/* Analysis Progress */}
         <div className="w-full max-w-[320px] mt-12 flex flex-col gap-8">
           <div className="flex flex-col gap-3">
-            <h3 className="text-white tracking-wide text-2xl font-bold leading-tight text-center">
-              {isRecording ? '正在录音中...' : 'AI 正在深度解析中...'}
+            <h3 className="text-white tracking-wide text-2xl font-bold leading-tight text-center" data-testid="analysis-status">
+              AI 正在分析中...
             </h3>
-            <p className="text-white/40 text-sm text-center font-medium">
-              {isRecording ? '捕捉周围的鸟鸣声音' : '正在匹配 10,000+ 鸟类鸣叫数据库'}
-            </p>
           </div>
 
           <div className="flex flex-col gap-4">
